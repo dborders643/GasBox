@@ -11,8 +11,9 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 # executable file(s)
 add_executable(box 
     src/main.cpp
-    src/physics.cpp
-    src/physics.h)
+    # src/physics.cpp
+    # src/physics.h
+    )
 
 # enable strict warning levels for GCC/Clang
 if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")

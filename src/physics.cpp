@@ -1,5 +1,6 @@
 #include "physics.h"
 #include <vector>
+#include <cmath>
 
 double calcEntropy(const std::vector<Particle>& particles, const Box& box, int gridCols, int gridRows) {
     // don't compute if there are no particles in local region
@@ -25,4 +26,17 @@ double calcEntropy(const std::vector<Particle>& particles, const Box& box, int g
 
         binCounts[binIdx]++;    // increment through each bin each cycle
     }
+
+    // 2. Entropy Accumulation
+    double entropy{0.0};
+    double N = static_cast<double>(particles.size());   // must be a double to avoid truncation
+
+    for (int Ni : binCounts) {
+        if (Ni > 0) {
+            double pi = Ni / N;
+            entropy -= pi * std::log(pi);
+        }
+    }    
+
+    return entropy;
 }
