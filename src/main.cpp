@@ -1,14 +1,10 @@
 #include <iostream>
+#include <string>
 
-// Define particle structure --> holds particle's position and velocity
-struct particle {
-    double  x{0.0};
-    double  y{0.0};
-    double vx{0.0};
-    double vy{0.0};
-};
+std:: string name{"Davis"};
 
 int main() {
     std :: cout << "Program compiled with no errors!\n";
+    std :: cout << "My name, " << name << " contains " << name.length() << " letters.\n";
     return 0;
 }

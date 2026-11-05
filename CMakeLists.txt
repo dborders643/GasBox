@@ -9,11 +9,14 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 # executable file(s)
-add_executable(main src/main.cpp)
+add_executable(box 
+    src/main.cpp
+    src/physics.cpp
+    src/physics.h)
 
 # enable strict warning levels for GCC/Clang
 if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
-    target_compile_options(main PRIVATE
+    target_compile_options(box PRIVATE
         -Wall
         -Wextra
         -Wpedantic
