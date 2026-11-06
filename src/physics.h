@@ -13,7 +13,7 @@ struct Particle{
 struct Box{
     int width{100};
     int height{100};
-    int wall{0.5*width};
+    int wall{width/2};
     int hole{20};
 };
 
